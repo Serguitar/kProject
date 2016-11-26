@@ -10,7 +10,9 @@
 
 
 
-@interface ItemVC ()
+@interface ItemVC () {
+    CAGradientLayer *gradient;
+}
 
 @end
 
@@ -19,6 +21,52 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self configureTextView];
+    [self configureButtons];
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+}
+
+- (void)configureTextView {
+    gradient = [CAGradientLayer layer];
+    
+    gradient.frame = self.textView.superview.bounds;
+    gradient.colors = @[(id)[UIColor clearColor].CGColor, (id)[UIColor blackColor].CGColor, (id)[UIColor blackColor].CGColor, (id)[UIColor clearColor].CGColor];
+    gradient.locations = @[@0.0, @0.03, @0.3, @1.0];
+    
+    self.textView.superview.layer.mask = gradient;
+    
+    
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textViewTapped:)];
+    [_textView addGestureRecognizer:gestureRecognizer];
+}
+
+- (void)configureButtons {
+    NSArray *arr = @[_plusButton, _minusButton];
+    
+    for (UIButton *b in arr ) {
+        CALayer *l = b.layer;
+        l.borderColor = b.tintColor.CGColor;
+        l.cornerRadius = b.frame.size.width / 2;
+        l.borderWidth = 1;
+    }
+}
+
+- (void)textViewTapped:(id)sender {
+    NSLog(@"tapped");
+    
+    if (self.textView.superview.layer.mask ) {
+        [_textViewCintainer removeConstraint:_textViewHeightConstraint];
+        self.textView.superview.layer.mask = nil;
+    } else {
+        self.textView.superview.layer.mask = gradient;
+        [_textViewCintainer addConstraint:_textViewHeightConstraint];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

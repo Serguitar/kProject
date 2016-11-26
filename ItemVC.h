@@ -17,6 +17,17 @@
 
 @interface ItemVC : UIViewController
 @property(nonatomic, strong) Item *item;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageIV;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIButton *minusButton;
+@property (weak, nonatomic) IBOutlet UITextField *quantTF;
+
+@property (weak, nonatomic) IBOutlet UIView *textViewCintainer;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *textViewHeightConstraint;
+
+@property (weak, nonatomic) IBOutlet UIButton *plusButton;
+
 @property(nonatomic, weak) id <ItemVCDelegate> delegate;
 
 @end

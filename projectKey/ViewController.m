@@ -13,6 +13,7 @@
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource, ItemVCDelegate, TableViewCellDeelgate> {
     NSArray *items;
 }
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomBarHeightConstraint;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -46,6 +47,8 @@
 - (void)showItemView {
     [self performSegueWithIdentifier:@"toItem" sender:nil];
 }
+
+
 
 - (void)calcPrice {
     CGFloat price = 0;
