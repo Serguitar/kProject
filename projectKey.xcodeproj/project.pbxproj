@@ -13,6 +13,10 @@
 		A53E03991DE8C91F00AE7A17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A53E03971DE8C91F00AE7A17 /* Main.storyboard */; };
 		A53E039B1DE8C91F00AE7A17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A53E039A1DE8C91F00AE7A17 /* Assets.xcassets */; };
 		A53E039E1DE8C91F00AE7A17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A53E039C1DE8C91F00AE7A17 /* LaunchScreen.storyboard */; };
+		A53E03A71DE8D81700AE7A17 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A53E03A61DE8D81700AE7A17 /* TableViewCell.m */; };
+		A53E03AE1DE8DE4400AE7A17 /* d.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A53E03AD1DE8DE4400AE7A17 /* d.jpeg */; };
+		A53E03B41DE8E49000AE7A17 /* ItemVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A53E03B31DE8E49000AE7A17 /* ItemVC.m */; };
+		A53E03B81DE8E51A00AE7A17 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = A53E03B71DE8E51A00AE7A17 /* Item.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,13 @@
 		A53E039A1DE8C91F00AE7A17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A53E039D1DE8C91F00AE7A17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A53E039F1DE8C91F00AE7A17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A53E03A51DE8D81700AE7A17 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		A53E03A61DE8D81700AE7A17 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		A53E03AD1DE8DE4400AE7A17 /* d.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = d.jpeg; sourceTree = "<group>"; };
+		A53E03B21DE8E49000AE7A17 /* ItemVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemVC.h; path = ../ItemVC.h; sourceTree = "<group>"; };
+		A53E03B31DE8E49000AE7A17 /* ItemVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemVC.m; path = ../ItemVC.m; sourceTree = "<group>"; };
+		A53E03B61DE8E51A00AE7A17 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		A53E03B71DE8E51A00AE7A17 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +69,17 @@
 		A53E038D1DE8C91F00AE7A17 /* projectKey */ = {
 			isa = PBXGroup;
 			children = (
+				A53E03AD1DE8DE4400AE7A17 /* d.jpeg */,
 				A53E03911DE8C91F00AE7A17 /* AppDelegate.h */,
 				A53E03921DE8C91F00AE7A17 /* AppDelegate.m */,
 				A53E03941DE8C91F00AE7A17 /* ViewController.h */,
 				A53E03951DE8C91F00AE7A17 /* ViewController.m */,
+				A53E03B21DE8E49000AE7A17 /* ItemVC.h */,
+				A53E03B31DE8E49000AE7A17 /* ItemVC.m */,
 				A53E03971DE8C91F00AE7A17 /* Main.storyboard */,
+				A53E03A51DE8D81700AE7A17 /* TableViewCell.h */,
+				A53E03A61DE8D81700AE7A17 /* TableViewCell.m */,
+				A53E03B51DE8E4BA00AE7A17 /* Models */,
 				A53E039A1DE8C91F00AE7A17 /* Assets.xcassets */,
 				A53E039C1DE8C91F00AE7A17 /* LaunchScreen.storyboard */,
 				A53E039F1DE8C91F00AE7A17 /* Info.plist */,
@@ -77,6 +94,15 @@
 				A53E038F1DE8C91F00AE7A17 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A53E03B51DE8E4BA00AE7A17 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A53E03B61DE8E51A00AE7A17 /* Item.h */,
+				A53E03B71DE8E51A00AE7A17 /* Item.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +167,7 @@
 				A53E039E1DE8C91F00AE7A17 /* LaunchScreen.storyboard in Resources */,
 				A53E039B1DE8C91F00AE7A17 /* Assets.xcassets in Resources */,
 				A53E03991DE8C91F00AE7A17 /* Main.storyboard in Resources */,
+				A53E03AE1DE8DE4400AE7A17 /* d.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,8 +178,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A53E03B81DE8E51A00AE7A17 /* Item.m in Sources */,
 				A53E03961DE8C91F00AE7A17 /* ViewController.m in Sources */,
+				A53E03A71DE8D81700AE7A17 /* TableViewCell.m in Sources */,
 				A53E03931DE8C91F00AE7A17 /* AppDelegate.m in Sources */,
+				A53E03B41DE8E49000AE7A17 /* ItemVC.m in Sources */,
 				A53E03901DE8C91F00AE7A17 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
