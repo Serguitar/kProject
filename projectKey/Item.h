@@ -11,6 +11,8 @@
 
 @interface Item : NSObject
 
++ (instancetype)itemFromDict:(NSDictionary *)dict;
+
 @property(nonatomic, copy) NSString *name;
 @property(nonatomic, assign) CGFloat cost;
 @property(nonatomic, assign) NSUInteger quantity;

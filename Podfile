@@ -7,6 +7,7 @@ target 'projectKey' do
   pod 'FLAnimatedImage', '~> 1.0'
 pod 'EHPlainAlert'
 pod 'WebPay', '~> 2.0.3'
+pod 'AFNetworking', '~> 2.0'
   # Pods for projectKey
 
 end

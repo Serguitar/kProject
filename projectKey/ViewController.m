@@ -11,9 +11,11 @@
 #import "ItemVC.h"
 #import "InfoVC.h"
 #import "CardRouter.h"
+#import "NetManager.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource, ItemVCDelegate, TableViewCellDeelgate> {
     NSArray *items;
+    NetManager *netManager;
 }
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomBarHeightConstraint;
 
@@ -46,6 +48,8 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clearOrder) name:@"CLOSE" object:nil];
     
+    netManager = [NetManager new];
+    
 }
 
 - (void)viewTapped {
@@ -68,7 +72,11 @@
 }
 
 - (void)showItemView {
-    [self performSegueWithIdentifier:@"toItem" sender:nil];
+    [netManager loadProductWithEAN:@"6408070025598" block:^(id object, NSError *error) {
+         [self performSegueWithIdentifier:@"toItem" sender:nil];
+    }];
+    
+//    [self performSegueWithIdentifier:@"toItem" sender:nil];
 }
 
 - (void)showBottomBar {

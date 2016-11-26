@@ -16,6 +16,7 @@
 		A52FF04C1DE9DD8A00BF082B /* add@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A52FF0491DE9DD8A00BF082B /* add@3x.png */; };
 		A52FF04D1DE9DD8A00BF082B /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = A52FF04A1DE9DD8A00BF082B /* add.png */; };
 		A52FF0501DE9F31400BF082B /* CardRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = A52FF04F1DE9F31400BF082B /* CardRouter.m */; };
+		A52FF0531DEA08DF00BF082B /* NetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A52FF0521DEA08DF00BF082B /* NetManager.m */; };
 		A53E03901DE8C91F00AE7A17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A53E038F1DE8C91F00AE7A17 /* main.m */; };
 		A53E03931DE8C91F00AE7A17 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A53E03921DE8C91F00AE7A17 /* AppDelegate.m */; };
 		A53E03961DE8C91F00AE7A17 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53E03951DE8C91F00AE7A17 /* ViewController.m */; };
@@ -50,6 +51,8 @@
 		A52FF04A1DE9DD8A00BF082B /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		A52FF04E1DE9F31400BF082B /* CardRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardRouter.h; sourceTree = "<group>"; };
 		A52FF04F1DE9F31400BF082B /* CardRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardRouter.m; sourceTree = "<group>"; };
+		A52FF0511DEA08DF00BF082B /* NetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetManager.h; sourceTree = "<group>"; };
+		A52FF0521DEA08DF00BF082B /* NetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetManager.m; sourceTree = "<group>"; };
 		A53E038B1DE8C91F00AE7A17 /* projectKey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectKey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A53E038F1DE8C91F00AE7A17 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A53E03911DE8C91F00AE7A17 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -135,6 +138,8 @@
 				A52FF0461DE9DB3700BF082B /* InfoVC.m */,
 				A52FF04E1DE9F31400BF082B /* CardRouter.h */,
 				A52FF04F1DE9F31400BF082B /* CardRouter.m */,
+				A52FF0511DEA08DF00BF082B /* NetManager.h */,
+				A52FF0521DEA08DF00BF082B /* NetManager.m */,
 				A53E03BB1DE984CA00AE7A17 /* New Group */,
 				A53E03B51DE8E4BA00AE7A17 /* Models */,
 				A53E039A1DE8C91F00AE7A17 /* Assets.xcassets */,
@@ -323,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A53E03CD1DE98BB200AE7A17 /* OrderWaitVC.m in Sources */,
+				A52FF0531DEA08DF00BF082B /* NetManager.m in Sources */,
 				A53E03B81DE8E51A00AE7A17 /* Item.m in Sources */,
 				A52FF0501DE9F31400BF082B /* CardRouter.m in Sources */,
 				A53E03961DE8C91F00AE7A17 /* ViewController.m in Sources */,

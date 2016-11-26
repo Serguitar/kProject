@@ -1,18 +1,41 @@
 PODS:
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
   - EHPlainAlert (1.2.1)
   - FLAnimatedImage (1.0.12)
   - WebPay (2.0.3)
 
 DEPENDENCIES:
+  - AFNetworking (~> 2.0)
   - EHPlainAlert
   - FLAnimatedImage (~> 1.0)
   - WebPay (~> 2.0.3)
 
 SPEC CHECKSUMS:
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   EHPlainAlert: c58e5583ca5ad2a82693d49762b2646011fcb389
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   WebPay: 37266115aaaa0676136e89bd7c2ecad358e6f5da
 
-PODFILE CHECKSUM: f30d1b5cb20457ef52f558ef2d948a1518ec5a1b
+PODFILE CHECKSUM: d0ac5ef797dd0ab17f264a33265d2bcfd301dec1
 
 COCOAPODS: 1.0.0

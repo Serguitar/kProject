@@ -10,4 +10,10 @@
 
 @implementation Item
 
++ (instancetype)itemFromDict:(NSDictionary *)dict {
+    dict[@"name"];
+    dict[@"description"];
+    dict[@"ean"];
+}
+
 @end
