@@ -23,6 +23,9 @@
     NSArray *images = dict[@"images"];
     NSDictionary *imageDict = images.firstObject;
     item.photoLink = imageDict[@"url"];
+    if (item.photoLink) {
+        item.photoLink = [item.photoLink stringByAppendingString:@"?h=400&w=400&fit=fill"];
+    }
     item.quantity = 1;
     
     return item;

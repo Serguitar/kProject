@@ -18,6 +18,7 @@
     NSArray *items;
     NetManager *netManager;
     Item *foundItem;
+    NSArray *testOrders;
 }
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomBarHeightConstraint;
 
@@ -34,6 +35,19 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     _bottomBarHeightConstraint.constant = 0;
+    
+    testOrders = @[
+                   @6408070025598,
+                   @4042448843227,
+                   @8016738709162,
+                   @3253560306977,
+                   @5000366120331,
+                   @3253561929052,
+                   @7320090038527,
+                   @7311490010787,
+                   @7320090038510,
+                   @27393564291018
+                   ];
     
     items = [NSArray array];
     
@@ -77,14 +91,35 @@
 }
 
 - (void)showItemView {
-    [netManager loadProductWithEAN:@"6408070025598" block:^(id object, NSError *error) {
+    NSString *eanStr  = @"6408070025598";
+    [netManager loadProductWithEAN:eanStr block:^(id object, NSError *error) {
         if (!error) {
             foundItem = [Item itemFromDict:object];
-            [self performSegueWithIdentifier:@"toItem" sender:nil];
+            [netManager loadPriceWithEAN:eanStr block:^(id object, NSError *error) {
+                if (error) {
+                    NSLog(@"%@",error.localizedDescription);
+                } else {
+                    NSDictionary *dict = object;
+                    if (dict[@"price"]) {
+                        foundItem.cost = [dict[@"price"] doubleValue];
+                    }
+                    [self performSegueWithIdentifier:@"toItem" sender:nil];
+                }
+            }];
         }
     }];
     
-//    [self performSegueWithIdentifier:@"toItem" sender:nil];
+    
+//    for (NSNumber *number in testOrders) {
+//        NSString *eantStr = number.stringValue;
+//        [netManager loadProductWithEAN:eantStr block:^(id object, NSError *error) {
+//            if (!error) {
+//                foundItem = [Item itemFromDict:object];
+//                items = [items arrayByAddingObject:foundItem];
+//                [self.tableView reloadData];
+//            }
+//        }];
+//    }
 }
 
 - (void)showBottomBar {
@@ -105,7 +140,7 @@
         price += item.cost * item.quantity;
     }
     
-    _priceLabel.text = [NSString stringWithFormat:@"%.1f $", price];
+    _priceLabel.text = [NSString stringWithFormat:@"%.1f €", price];
 }
 
 

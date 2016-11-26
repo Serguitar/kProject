@@ -15,7 +15,7 @@
         <scene sceneID="ItT-xa-o91">
             <objects>
                 <navigationController id="Sfg-eO-J68" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Sap-bM-6TW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Sap-bM-6TW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -263,6 +263,7 @@
                         <outlet property="imageIV" destination="eQM-Gs-BC2" id="Ji1-Qm-Qph"/>
                         <outlet property="minusButton" destination="LsE-m4-rKh" id="84K-kn-GZQ"/>
                         <outlet property="plusButton" destination="mjK-z7-Vcc" id="nNp-fW-vhz"/>
+                        <outlet property="priceLabel" destination="8JF-O3-5fW" id="1mI-Z1-Toy"/>
                         <outlet property="quantTF" destination="QJq-qX-a40" id="9m3-Bw-tGo"/>
                         <outlet property="textView" destination="Qvd-eQ-BYW" id="lWP-h9-T5w"/>
                         <outlet property="textViewCintainer" destination="WiQ-wW-s8x" id="vRJ-7D-jdZ"/>
@@ -386,10 +387,10 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="124"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h1z-0L-AGk" id="IBf-3c-5Xn">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="123"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="d.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="K4h-6H-Q9x">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="d.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="K4h-6H-Q9x">
                                                     <rect key="frame" x="8" y="24" width="80" height="80"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="80" id="Rja-Gp-lMT"/>

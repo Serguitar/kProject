@@ -18,8 +18,6 @@
     CAGradientLayer *gradient;
     NSArray *arr;
     BOOL shouldClose;
-    
-    NSArray *testOrders;
 }
 
 @end
@@ -37,18 +35,7 @@
     [self configureTextView];
     [self configureButtons];
     
-    testOrders = @[
-                   @6408070025598,
-                   @4042448843227,
-                   @8016738709162,
-                   @3253560306977,
-                   @5000366120331,
-                   @3253561929052,
-                   @7320090038527,
-                   @7311490010787,
-                   @7320090038510,
-                   @27393564291018
-                   ];
+
     
     arr = @[ @1, @2, @3, @4];
     
@@ -61,6 +48,8 @@
     
     _titleLabel.text = _item.name;
     _textView.text = _item.shortDescr;
+    _priceLabel.text =  [NSString stringWithFormat:@"%.1f €", _item.cost];
+
     
     if (_item.photoLink) {
         NSURL *url = [NSURL URLWithString:_item.photoLink];
@@ -193,7 +182,7 @@
 - (IBAction)buyNowTapped:(id)sender {
     CGFloat price = 0;
     price = _item.cost * _item.quantity;
-    NSString *str = [NSString stringWithFormat:@"%.1f $", price];
+    NSString *str = [NSString stringWithFormat:@"%.1f €", price];
     [CardRouter showCardOnVC:self fromItem:YES price:str];
 }
 

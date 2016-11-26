@@ -22,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIButton *minusButton;
 @property (weak, nonatomic) IBOutlet UITextField *quantTF;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+
 
 @property (weak, nonatomic) IBOutlet UIView *textViewCintainer;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *textViewHeightConstraint;

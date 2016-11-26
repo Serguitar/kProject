@@ -14,5 +14,6 @@ typedef void (^CommonBlock)(id object, NSError *error);
 @interface NetManager : NSObject
 
 - (void)loadProductWithEAN:(NSString *)eanStr block:(CommonBlock)block;
+- (void)loadPriceWithEAN:(NSString *)eanStr block:(CommonBlock)block;
 
 @end

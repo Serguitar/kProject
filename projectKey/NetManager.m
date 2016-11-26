@@ -23,9 +23,28 @@
     return manager;
 }
 
+- (AFHTTPRequestOperationManager *)manager2 {
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    manager.requestSerializer.cachePolicy = NSURLRequestReturnCacheDataElseLoad;
+    return manager;
+}
+
+
 - (void)loadProductWithEAN:(NSString *)eanStr block:(CommonBlock)block {
     NSString *fullPath = [NSString stringWithFormat:@"https://api.eu.apiconnect.ibmcloud.com/kesko-dev-rauta-api/qa/products/%@",eanStr];
     [self.manager GET:fullPath parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        block(responseObject,nil);
+    }
+    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        block(nil,error);
+    }];
+}
+
+- (void)loadPriceWithEAN:(NSString *)eanStr block:(CommonBlock)block {
+    NSString *fullPath = @"http://ktools.store/";
+    fullPath = [fullPath stringByAppendingFormat:@"price/%@",eanStr];
+    [self.manager2 GET:fullPath parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         block(responseObject,nil);
     }
     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
