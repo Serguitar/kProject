@@ -497,7 +497,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Zhz-4r-xAD" kind="presentation" id="N7X-LW-6Fg"/>
+                                            <action selector="buyButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EHp-tL-zPz"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="200 €" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sue-JK-o1B">
@@ -548,6 +548,7 @@
                         <outlet property="priceLabel" destination="Sue-JK-o1B" id="5On-7d-bB9"/>
                         <outlet property="tableView" destination="xH0-LZ-8dB" id="aax-qT-GMo"/>
                         <segue destination="Cis-GW-QjR" kind="show" identifier="toItem" id="ma4-0e-dSl"/>
+                        <segue destination="Zhz-4r-xAD" kind="presentation" identifier="vcToOrderVC" id="Ewv-np-EVo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -608,7 +609,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qCD-MU-g2y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-202.40000000000001" y="330.58470764617692"/>
+            <point key="canvasLocation" x="-322" y="393"/>
         </scene>
         <!--Order PickupVC-->
         <scene sceneID="9Yo-I4-isw">
@@ -733,7 +734,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ekD-ps-vhM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="608.79999999999995" y="339.58020989505252"/>
+            <point key="canvasLocation" x="626" y="393"/>
         </scene>
     </scenes>
     <resources>

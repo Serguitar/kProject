@@ -10,6 +10,7 @@
 #import "TableViewCell.h"
 #import "ItemVC.h"
 #import "InfoVC.h"
+#import "CardRouter.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource, ItemVCDelegate, TableViewCellDeelgate> {
     NSArray *items;
@@ -123,6 +124,10 @@
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdet forIndexPath:indexPath];
     cell.delegate = self;
     cell.priceLabel.text = [NSString stringWithFormat:@"%.1f €", item.cost];
+    
+    if (item.quantity > 0) {
+        cell.quntityTF.text = [NSString stringWithFormat:@"%i", item.quantity];
+    }
                         ;
 //    cell.photoIV.image = [UIImage imageNamed:@"d"];
     return cell;
@@ -182,19 +187,11 @@
     vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     
     [self presentViewController:vc animated:YES completion:nil];
-    
-//    [UIView transitionFromView:self.view
-//                        toView:vc.view
-//                      duration:1
-//                       options:UIViewAnimationOptionTransitionFlipFromBottom
-//                    completion:nil];
-//    
-//
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [vc.view removeFromSuperview];
-//    });
 }
 
+- (IBAction)buyButtonTapped:(id)sender {
+    [CardRouter showCardOnVC:self fromItem:NO price:_priceLabel.text];
+}
 
 
 @end

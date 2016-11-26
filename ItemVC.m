@@ -9,18 +9,23 @@
 #import "ItemVC.h"
 #import "CollectionCell.h"
 #import <EHPlainAlert/EHPlainAlert.h>
-#import "Webpay.h"
+#import "CardRouter.h"
 
 
 
 @interface ItemVC () <UICollectionViewDelegate, UICollectionViewDataSource> {
     CAGradientLayer *gradient;
     NSArray *arr;
+    BOOL shouldClose;
 }
 
 @end
 
 @implementation ItemVC
+
+-(void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,28 +43,41 @@
     
     [_minusButton setEnabled:YES];
     
+//     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(close) name:@"CLOSE" object:nil];
 
-    // replace test_public_YOUR_PUBLIC_KEY with your WebPay publishable key
-    [WPYTokenizer setPublicKey:@"test_public_YOUR_PUBLIC_KEY"];
 }
+
 //TableViewCellDeelgate
 - (IBAction)plusButtonTapped {
     _item.quantity += 1;
     _quantTF.text = [NSString stringWithFormat:@"%lu",(unsigned long)_item.quantity];
+     [_minusButton setEnabled:YES];
 }
 
 - (IBAction)minusButtonTapped {
     NSUInteger quant = _item.quantity - 1;
     if (quant > 0) {
+        _item.quantity = quant;
         _quantTF.text = [NSString stringWithFormat:@"%lu",(unsigned long)_item.quantity];
-    } else {
         [_minusButton setEnabled:YES];
+    } else {
+        [_minusButton setEnabled:NO];
     }
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+- (void)close {
+    if (_isRelatedMode) {
+        shouldClose = YES;
+    }
+    
+}
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    if (shouldClose) {
+        [self.navigationController popViewControllerAnimated:NO];
+    }
 }
 
 - (void)configureTextView {
@@ -146,24 +164,11 @@
 }
 
 - (IBAction)buyNowTapped:(id)sender {
-    WPYCreditCard *card = [WPYCreditCard new];
-    card.number = @"5106216009511977";
-    card.name =   @"IVAN IVANOV";
-    card.cvc =    @"123";
-    card.expiryYear = 2018;
-    card.expiryMonth = 5;
-    
-    WPYPaymentViewController *paymentViewController = [WPYPaymentViewController paymentViewControllerWithPriceTag:@"350 $" card:card callback:^(WPYPaymentViewController *paymentViewController, WPYToken *token, NSError *error) {
-        
-        [self.navigationController popViewControllerAnimated:NO];
-        
-        [self performSegueWithIdentifier:@"itemToOrderVC" sender:nil];
-        
-    }];
-    
-    [self.navigationController pushViewController:paymentViewController animated:YES];
+    CGFloat price = 0;
+    price = _item.cost * _item.quantity;
+    NSString *str = [NSString stringWithFormat:@"%.1f $", price];
+    [CardRouter showCardOnVC:self fromItem:YES price:str];
 }
-
 
 /*
 #pragma mark - Navigation
