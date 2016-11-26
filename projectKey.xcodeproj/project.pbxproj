@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D0D886D534C832522495E66 /* libPods-projectKey.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5527FED656F693B599FB1AEE /* libPods-projectKey.a */; };
 		A53E03901DE8C91F00AE7A17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A53E038F1DE8C91F00AE7A17 /* main.m */; };
 		A53E03931DE8C91F00AE7A17 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A53E03921DE8C91F00AE7A17 /* AppDelegate.m */; };
 		A53E03961DE8C91F00AE7A17 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53E03951DE8C91F00AE7A17 /* ViewController.m */; };
@@ -21,9 +22,14 @@
 		A53E03C51DE9855900AE7A17 /* info-button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A53E03C21DE9855900AE7A17 /* info-button@3x.png */; };
 		A53E03C61DE9855900AE7A17 /* info-button.png in Resources */ = {isa = PBXBuildFile; fileRef = A53E03C31DE9855900AE7A17 /* info-button.png */; };
 		A53E03C71DE9855900AE7A17 /* info-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A53E03C41DE9855900AE7A17 /* info-button@2x.png */; };
+		A53E03CD1DE98BB200AE7A17 /* OrderWaitVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A53E03CC1DE98BB200AE7A17 /* OrderWaitVC.m */; };
+		A53E03CF1DE98D6600AE7A17 /* buy.gif in Resources */ = {isa = PBXBuildFile; fileRef = A53E03CE1DE98D6600AE7A17 /* buy.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C6F30D5F80DCD7B720C56ED /* Pods-projectKey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-projectKey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-projectKey/Pods-projectKey.debug.xcconfig"; sourceTree = "<group>"; };
+		3E4AEF97BBEF9BC381E47FFC /* Pods-projectKey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-projectKey.release.xcconfig"; path = "Pods/Target Support Files/Pods-projectKey/Pods-projectKey.release.xcconfig"; sourceTree = "<group>"; };
+		5527FED656F693B599FB1AEE /* libPods-projectKey.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-projectKey.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A53E038B1DE8C91F00AE7A17 /* projectKey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectKey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A53E038F1DE8C91F00AE7A17 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A53E03911DE8C91F00AE7A17 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -45,6 +51,9 @@
 		A53E03C21DE9855900AE7A17 /* info-button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info-button@3x.png"; sourceTree = "<group>"; };
 		A53E03C31DE9855900AE7A17 /* info-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info-button.png"; sourceTree = "<group>"; };
 		A53E03C41DE9855900AE7A17 /* info-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info-button@2x.png"; sourceTree = "<group>"; };
+		A53E03CB1DE98BB200AE7A17 /* OrderWaitVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderWaitVC.h; sourceTree = "<group>"; };
+		A53E03CC1DE98BB200AE7A17 /* OrderWaitVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderWaitVC.m; sourceTree = "<group>"; };
+		A53E03CE1DE98D6600AE7A17 /* buy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = buy.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D0D886D534C832522495E66 /* libPods-projectKey.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +73,8 @@
 			children = (
 				A53E038D1DE8C91F00AE7A17 /* projectKey */,
 				A53E038C1DE8C91F00AE7A17 /* Products */,
+				EF89CE7F79D21B26F1235E05 /* Pods */,
+				E5F500635622835EC9248EC3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +91,7 @@
 			children = (
 				A53E03B91DE97EE300AE7A17 /* nfc.png */,
 				A53E03AD1DE8DE4400AE7A17 /* d.jpeg */,
+				A53E03CE1DE98D6600AE7A17 /* buy.gif */,
 				A53E03911DE8C91F00AE7A17 /* AppDelegate.h */,
 				A53E03921DE8C91F00AE7A17 /* AppDelegate.m */,
 				A53E03941DE8C91F00AE7A17 /* ViewController.h */,
@@ -88,6 +101,8 @@
 				A53E03971DE8C91F00AE7A17 /* Main.storyboard */,
 				A53E03A51DE8D81700AE7A17 /* TableViewCell.h */,
 				A53E03A61DE8D81700AE7A17 /* TableViewCell.m */,
+				A53E03CB1DE98BB200AE7A17 /* OrderWaitVC.h */,
+				A53E03CC1DE98BB200AE7A17 /* OrderWaitVC.m */,
 				A53E03BB1DE984CA00AE7A17 /* New Group */,
 				A53E03B51DE8E4BA00AE7A17 /* Models */,
 				A53E039A1DE8C91F00AE7A17 /* Assets.xcassets */,
@@ -125,6 +140,23 @@
 			name = "New Group";
 			sourceTree = "<group>";
 		};
+		E5F500635622835EC9248EC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5527FED656F693B599FB1AEE /* libPods-projectKey.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF89CE7F79D21B26F1235E05 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2C6F30D5F80DCD7B720C56ED /* Pods-projectKey.debug.xcconfig */,
+				3E4AEF97BBEF9BC381E47FFC /* Pods-projectKey.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +164,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A53E03A21DE8C91F00AE7A17 /* Build configuration list for PBXNativeTarget "projectKey" */;
 			buildPhases = (
+				139B44B03308DE1A09A68E5F /* 📦 Check Pods Manifest.lock */,
 				A53E03871DE8C91E00AE7A17 /* Sources */,
 				A53E03881DE8C91E00AE7A17 /* Frameworks */,
 				A53E03891DE8C91E00AE7A17 /* Resources */,
+				06BBADFE04B0A65FC743FF33 /* 📦 Embed Pods Frameworks */,
+				504C16FCECF3073CB26F86A0 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -184,6 +219,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A53E03CF1DE98D6600AE7A17 /* buy.gif in Resources */,
 				A53E039E1DE8C91F00AE7A17 /* LaunchScreen.storyboard in Resources */,
 				A53E03C51DE9855900AE7A17 /* info-button@3x.png in Resources */,
 				A53E039B1DE8C91F00AE7A17 /* Assets.xcassets in Resources */,
@@ -197,11 +233,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06BBADFE04B0A65FC743FF33 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-projectKey/Pods-projectKey-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		139B44B03308DE1A09A68E5F /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		504C16FCECF3073CB26F86A0 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-projectKey/Pods-projectKey-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A53E03871DE8C91E00AE7A17 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A53E03CD1DE98BB200AE7A17 /* OrderWaitVC.m in Sources */,
 				A53E03B81DE8E51A00AE7A17 /* Item.m in Sources */,
 				A53E03961DE8C91F00AE7A17 /* ViewController.m in Sources */,
 				A53E03A71DE8D81700AE7A17 /* TableViewCell.m in Sources */,
@@ -325,6 +410,7 @@
 		};
 		A53E03A31DE8C91F00AE7A17 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C6F30D5F80DCD7B720C56ED /* Pods-projectKey.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3XALD943AG;
@@ -337,6 +423,7 @@
 		};
 		A53E03A41DE8C91F00AE7A17 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E4AEF97BBEF9BC381E47FFC /* Pods-projectKey.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3XALD943AG;
@@ -366,6 +453,7 @@
 				A53E03A41DE8C91F00AE7A17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

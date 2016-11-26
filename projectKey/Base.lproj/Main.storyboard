@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,6 +18,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Sap-bM-6TW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.85566896200180054" green="0.78661388158798218" blue="0.64313725490196072" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
@@ -311,6 +313,9 @@
                                         <state key="normal" title="   Assemble order   ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="Zhz-4r-xAD" kind="show" id="N7X-LW-6Fg"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sue-JK-o1B">
                                         <rect key="frame" x="308" y="22" width="59" height="21"/>
@@ -361,6 +366,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="88.799999999999997" y="-400.74962518740631"/>
+        </scene>
+        <!--Order WaitVC-->
+        <scene sceneID="wRW-WS-3e0">
+            <objects>
+                <viewController id="Zhz-4r-xAD" customClass="OrderWaitVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="K6v-cS-iAm"/>
+                        <viewControllerLayoutGuide type="bottom" id="J1O-o1-dan"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Cbs-CC-1gw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3B2-QF-s4n">
+                                <rect key="frame" x="27.5" y="213.5" width="320" height="240"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3B2-QF-s4n" secondAttribute="height" multiplier="4:3" id="2aS-5F-BHl"/>
+                                    <constraint firstAttribute="width" constant="320" id="ccP-zL-qkJ"/>
+                                </constraints>
+                            </view>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="8jr-Ls-Abh">
+                                <rect key="frame" x="35" y="478" width="313" height="2"/>
+                                <color key="tintColor" red="0.15752166509628296" green="0.62472862005233765" blue="0.37643647193908691" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="wti-NT-qDt"/>
+                                </constraints>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You order is assembling" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtF-SF-6Rf">
+                                <rect key="frame" x="27" y="122" width="313" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <color key="textColor" red="0.32153749465942383" green="0.32158857583999634" blue="0.32152634859085083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3B2-QF-s4n" firstAttribute="centerX" secondItem="Cbs-CC-1gw" secondAttribute="centerX" id="AlG-QJ-xw6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8jr-Ls-Abh" secondAttribute="trailing" constant="11" id="Mvm-dm-yX6"/>
+                            <constraint firstItem="8jr-Ls-Abh" firstAttribute="top" secondItem="3B2-QF-s4n" secondAttribute="bottom" constant="24.5" id="ZZ8-Rt-YX0"/>
+                            <constraint firstItem="8jr-Ls-Abh" firstAttribute="leading" secondItem="Cbs-CC-1gw" secondAttribute="leadingMargin" constant="19" id="cyU-7f-bSH"/>
+                            <constraint firstItem="3B2-QF-s4n" firstAttribute="centerY" secondItem="Cbs-CC-1gw" secondAttribute="centerY" id="z1K-Em-Snp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="gifContainer" destination="3B2-QF-s4n" id="qwg-Ah-ofa"/>
+                        <outlet property="progressLine" destination="Cbs-CC-1gw" id="xim-m9-hjX"/>
+                        <outlet property="progressView" destination="8jr-Ls-Abh" id="FK3-aw-gUq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qCD-MU-g2y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-202.40000000000001" y="330.58470764617692"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="9Yo-I4-isw">
