@@ -8,6 +8,7 @@
 
 #import "OrderWaitVC.h"
  #import "FLAnimatedImage.h"
+#import "OrderPickupVC.h"
 
 @interface OrderWaitVC () {
     NSTimer *timer;
@@ -22,9 +23,14 @@
     // Do any additional setup after loading the view.
     [self showAnimation];
     
-    
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.05 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        [self setPrrogress];
+    }];
     
     self.view.backgroundColor = [UIColor whiteColor];
+    
+//    [self showComplete];
+
 }
 
 - (void)showAnimation {
@@ -44,7 +50,32 @@
 
 - (void)setPrrogress {
     CGFloat progress = _progressView.progress;
-    progress += 0.1;
+    progress += 0.005;
+    
+    if (progress >= 1) {
+        [self showComplete];
+        
+        if (timer) {
+            [timer invalidate];
+            timer = nil;
+        }
+    }
+    
+    _progressView.progress = progress;
+}
+
+- (void)showComplete {
+//    UIColor *green = [UIColor colorWithRed:40.0/255.0 green:159.0/255.0 blue:96.0/255.0 alpha:1];
+    
+//    _mainLabel.text = @"Order is waiting for you at";
+//    _mainLabel.textColor = green;
+    
+//    [_progressView setHidden:YES];
+    
+//    [_gifContainer setHidden:YES];
+    
+    [self performSegueWithIdentifier:@"toOrderPickupVC" sender:self];
+     
 }
 
 - (void)didReceiveMemoryWarning {

@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIView *gifContainer;
 
 @property (weak, nonatomic) IBOutlet UIProgressView *progressView;
+@property (weak, nonatomic) IBOutlet UILabel *mainLabel;
 
 @end
