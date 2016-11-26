@@ -85,7 +85,6 @@
 //    [_gifContainer setHidden:YES];
     
     [self performSegueWithIdentifier:@"toOrderPickupVC" sender:self];
-     
 }
 
 - (void)didReceiveMemoryWarning {

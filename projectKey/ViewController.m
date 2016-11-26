@@ -122,6 +122,11 @@
 //    }
 }
 
+- (void)showAlreadyAdded:(Item *)item {
+    foundItem = item;
+    [self performSegueWithIdentifier:@"toItem" sender:nil];
+}
+
 - (void)showBottomBar {
     [UIView animateWithDuration:1.0 animations:^{
         _bottomBarHeightConstraint.constant = 64;
@@ -195,7 +200,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self showItemView];
+//    [self showItemView];
 }
 
 - (void)didSelectItem:(Item *)item {
@@ -238,6 +243,12 @@
         [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];
     }
+}
+
+- (void)didSelectCell:(TableViewCell *)cell {
+    NSUInteger row = [self.tableView indexPathForCell:cell].row;
+    Item *item = items[row];
+    [self showAlreadyAdded:item];
 }
 
 

@@ -63,6 +63,12 @@
     }
 }
 
+- (IBAction)mainButtonTapped:(id)sender {
+    if (_delegate && [_delegate respondsToSelector:@selector(didSelectCell:)]) {
+        [_delegate didSelectCell:self];
+    }
+}
+
 
 
 

@@ -111,14 +111,25 @@
 }
 
 - (void)configureButtons {
-    NSArray *arr = @[_plusButton, _minusButton];
+    NSArray *array = @[_plusButton, _minusButton];
     
-    for (UIButton *b in arr ) {
+    UIColor *blueColor;
+    for (UIButton *b in array ) {
         CALayer *l = b.layer;
         l.borderColor = b.tintColor.CGColor;
-        l.cornerRadius = b.frame.size.width / 2;
+        l.cornerRadius = b.frame.size.height / 2;
         l.borderWidth = 1;
+        blueColor = b.tintColor;
     }
+    
+    NSArray *buttons = @[_addButton, _buyNowButton];
+    for (UIButton *b in buttons ) {
+        CALayer *l = b.layer;
+//        l.borderColor = blueColor.CGColor;
+        l.cornerRadius = b.frame.size.height / 2;
+//        l.borderWidth = 1;
+    }
+
 }
 
 - (void)textViewTapped:(id)sender {

@@ -14,6 +14,7 @@
 
 - (void)plusButtonTappedInCell:(TableViewCell *)cell;
 - (void)minusButtonTappedInCell:(TableViewCell *)cell;
+- (void)didSelectCell:(TableViewCell *)cell;
 
 @end
 
