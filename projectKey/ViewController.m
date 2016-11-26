@@ -42,10 +42,21 @@
     
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped)];
     [self.view addGestureRecognizer:gestureRecognizer];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clearOrder) name:@"CLOSE" object:nil];
+    
 }
 
 - (void)viewTapped {
     [self showItemView];
+}
+
+- (void)clearOrder {
+    items = [NSArray array];
+    [self.tableView reloadData];
+    [self calcPrice];
+    [self hidBottomBar];
+    [_nfcContainerView setHidden:NO];
 }
 
 - (void)configureButton {
@@ -62,6 +73,12 @@
 - (void)showBottomBar {
     [UIView animateWithDuration:1.0 animations:^{
         _bottomBarHeightConstraint.constant = 64;
+    }];
+}
+
+- (void)hidBottomBar {
+    [UIView animateWithDuration:1.0 animations:^{
+        _bottomBarHeightConstraint.constant = 0;
     }];
 }
 
@@ -146,7 +163,7 @@
     } else {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Do you want to remove this item?" preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            NSMutableArray *itemsMut = [NSMutableArray new];
+            NSMutableArray *itemsMut = items.mutableCopy;
             [itemsMut removeObject:item];
             items = itemsMut.copy;
             [self.tableView reloadData];

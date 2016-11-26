@@ -35,9 +35,24 @@
         [_alsoNeedLabel setHidden:YES];
     }
     
+    [_minusButton setEnabled:YES];
+}
+//TableViewCellDeelgate
+- (IBAction)plusButtonTapped {
+    _item.quantity += 1;
+    _quantTF.text = [NSString stringWithFormat:@"%lu",(unsigned long)_item.quantity];
 }
 
--(void)viewWillAppear:(BOOL)animated {
+- (IBAction)minusButtonTapped {
+    NSUInteger quant = _item.quantity - 1;
+    if (quant > 0) {
+        _quantTF.text = [NSString stringWithFormat:@"%lu",(unsigned long)_item.quantity];
+    } else {
+        [_minusButton setEnabled:YES];
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
 }
@@ -90,7 +105,7 @@
         [self.navigationController popViewControllerAnimated:YES];
         
         if (_isRelatedMode) {
-            [EHPlainAlert showAlertWithTitle:nil message:@"Added to cart" type:ViewAlertSuccess];
+            [EHPlainAlert showAlertWithTitle:@"Added to cart" message:nil type:ViewAlertSuccess];
         }
     }
 }

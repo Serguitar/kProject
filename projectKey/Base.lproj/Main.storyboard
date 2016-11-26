@@ -45,7 +45,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ndg-Dp-Vsc">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="471"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You may also need" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEf-el-0gk">
                                                 <rect key="frame" x="36" y="302" width="143" height="21"/>
@@ -163,6 +163,9 @@
                                                         <state key="normal" title="-">
                                                             <color key="titleColor" red="0.01657796651" green="0.2211904824" blue="0.64873951669999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="minusButtonTapped" destination="Cis-GW-QjR" eventType="touchUpInside" id="OBp-Xv-Gd9"/>
+                                                        </connections>
                                                     </button>
                                                     <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QJq-qX-a40">
                                                         <rect key="frame" x="65" y="1" width="37" height="30"/>
@@ -181,6 +184,9 @@
                                                         <state key="normal" title="+">
                                                             <color key="titleColor" red="0.01657796651" green="0.2211904824" blue="0.64873951669999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="plusButtonTapped" destination="Cis-GW-QjR" eventType="touchUpInside" id="01q-ON-VoG"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pyb-tc-3h5">
                                                         <rect key="frame" x="259" y="0.0" width="76" height="30"/>
@@ -212,6 +218,7 @@
                                             <constraint firstItem="eQM-Gs-BC2" firstAttribute="top" secondItem="ndg-Dp-Vsc" secondAttribute="top" constant="8" id="ACJ-sT-Bwz"/>
                                             <constraint firstItem="YEf-el-0gk" firstAttribute="top" secondItem="E47-HP-vpw" secondAttribute="bottom" constant="8" id="E9q-cs-1up"/>
                                             <constraint firstItem="WiQ-wW-s8x" firstAttribute="top" secondItem="9Cb-Kp-gT6" secondAttribute="bottom" constant="3" id="Edp-zL-DBv"/>
+                                            <constraint firstAttribute="bottom" secondItem="OBj-g9-3d1" secondAttribute="bottom" id="FLF-qq-DzU"/>
                                             <constraint firstAttribute="trailing" secondItem="8JF-O3-5fW" secondAttribute="trailing" constant="20" id="NZg-Pp-ZjT"/>
                                             <constraint firstAttribute="trailing" secondItem="E47-HP-vpw" secondAttribute="trailing" constant="20" id="PbC-1C-G4r"/>
                                             <constraint firstItem="OBj-g9-3d1" firstAttribute="leading" secondItem="ndg-Dp-Vsc" secondAttribute="leading" id="Wvk-LE-LZF"/>
@@ -219,7 +226,6 @@
                                             <constraint firstItem="E47-HP-vpw" firstAttribute="leading" secondItem="ndg-Dp-Vsc" secondAttribute="leading" constant="20" id="Xso-88-5yG"/>
                                             <constraint firstItem="8JF-O3-5fW" firstAttribute="leading" secondItem="9Cb-Kp-gT6" secondAttribute="trailing" constant="24" id="bXv-3M-5re"/>
                                             <constraint firstAttribute="trailing" secondItem="WiQ-wW-s8x" secondAttribute="trailing" id="eh4-IT-DKi"/>
-                                            <constraint firstAttribute="height" constant="700" id="frO-ca-NCD"/>
                                             <constraint firstItem="eQM-Gs-BC2" firstAttribute="centerX" secondItem="ndg-Dp-Vsc" secondAttribute="centerX" id="g6O-Qs-I0Y"/>
                                             <constraint firstItem="9Cb-Kp-gT6" firstAttribute="top" secondItem="eQM-Gs-BC2" secondAttribute="bottom" constant="8" id="jBF-js-2f2"/>
                                             <constraint firstItem="8JF-O3-5fW" firstAttribute="centerY" secondItem="9Cb-Kp-gT6" secondAttribute="centerY" id="lan-Xu-NIn"/>
@@ -230,6 +236,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ndg-Dp-Vsc" secondAttribute="trailing" id="BWV-PJ-4ZX"/>
                                     <constraint firstAttribute="bottom" secondItem="ndg-Dp-Vsc" secondAttribute="bottom" constant="8" id="cVg-NI-JsH"/>
