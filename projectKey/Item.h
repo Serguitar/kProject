@@ -14,6 +14,12 @@
 + (instancetype)itemFromDict:(NSDictionary *)dict;
 
 @property(nonatomic, copy) NSString *name;
+@property(nonatomic, copy) NSString *shortDescr;
+@property(nonatomic, assign) NSUInteger ean;
+@property(nonatomic, copy) NSString *photoLink;
+
+
+
 @property(nonatomic, assign) CGFloat cost;
 @property(nonatomic, assign) NSUInteger quantity;
 

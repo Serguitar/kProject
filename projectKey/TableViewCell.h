@@ -21,9 +21,9 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *photoIV;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *desctTF;
 @property (weak, nonatomic) IBOutlet UIButton *plusButton;
 @property (weak, nonatomic) IBOutlet UIButton *minusButton;
-
 @property (weak, nonatomic) IBOutlet UITextField *quntityTF;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 

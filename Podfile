@@ -8,6 +8,7 @@ target 'projectKey' do
 pod 'EHPlainAlert'
 pod 'WebPay', '~> 2.0.3'
 pod 'AFNetworking', '~> 2.0'
+pod 'SDWebImage', '~>3.8'
   # Pods for projectKey
 
 end

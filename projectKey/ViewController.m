@@ -12,10 +12,12 @@
 #import "InfoVC.h"
 #import "CardRouter.h"
 #import "NetManager.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource, ItemVCDelegate, TableViewCellDeelgate> {
     NSArray *items;
     NetManager *netManager;
+    Item *foundItem;
 }
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomBarHeightConstraint;
 
@@ -50,6 +52,9 @@
     
     netManager = [NetManager new];
     
+    _tableView.estimatedRowHeight = 80;
+    _tableView.rowHeight = UITableViewAutomaticDimension;
+    
 }
 
 - (void)viewTapped {
@@ -73,7 +78,10 @@
 
 - (void)showItemView {
     [netManager loadProductWithEAN:@"6408070025598" block:^(id object, NSError *error) {
-         [self performSegueWithIdentifier:@"toItem" sender:nil];
+        if (!error) {
+            foundItem = [Item itemFromDict:object];
+            [self performSegueWithIdentifier:@"toItem" sender:nil];
+        }
     }];
     
 //    [self performSegueWithIdentifier:@"toItem" sender:nil];
@@ -109,15 +117,15 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"toItem"]) {
         
-        Item *item = [Item new];
-        item.name = @"test";
-        item.cost = 50;
-        item.quantity = 1;
+#warning
+//        Item *item = [Item new];
+//        item.name = @"test";
+//        item.cost = 50;
+//        item.quantity = 1;
         
         ItemVC *itemVC = [segue destinationViewController];
         itemVC.delegate = self;
-        itemVC.item = item;
-        
+        itemVC.item = foundItem;
     }
 }
 
@@ -136,6 +144,16 @@
     if (item.quantity > 0) {
         cell.quntityTF.text = [NSString stringWithFormat:@"%i", item.quantity];
     }
+    
+    if (item.photoLink) {
+        NSURL *url = [NSURL URLWithString:item.photoLink];
+        [cell.photoIV sd_setImageWithURL:url
+                     placeholderImage:nil];
+        
+    }
+    
+    cell.nameLabel.text = item.name;
+    cell.desctTF.text = item.shortDescr;
                         ;
 //    cell.photoIV.image = [UIImage imageNamed:@"d"];
     return cell;

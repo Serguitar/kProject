@@ -10,6 +10,7 @@
 #import "CollectionCell.h"
 #import <EHPlainAlert/EHPlainAlert.h>
 #import "CardRouter.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 
 
@@ -17,6 +18,8 @@
     CAGradientLayer *gradient;
     NSArray *arr;
     BOOL shouldClose;
+    
+    NSArray *testOrders;
 }
 
 @end
@@ -34,6 +37,19 @@
     [self configureTextView];
     [self configureButtons];
     
+    testOrders = @[
+                   @6408070025598,
+                   @4042448843227,
+                   @8016738709162,
+                   @3253560306977,
+                   @5000366120331,
+                   @3253561929052,
+                   @7320090038527,
+                   @7311490010787,
+                   @7320090038510,
+                   @27393564291018
+                   ];
+    
     arr = @[ @1, @2, @3, @4];
     
     if (_isRelatedMode) {
@@ -42,6 +58,17 @@
     }
     
     [_minusButton setEnabled:YES];
+    
+    _titleLabel.text = _item.name;
+    _textView.text = _item.shortDescr;
+    
+    if (_item.photoLink) {
+        NSURL *url = [NSURL URLWithString:_item.photoLink];
+        [_imageIV sd_setImageWithURL:url
+                        placeholderImage:nil];
+        
+    }
+
     
 //     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(close) name:@"CLOSE" object:nil];
 
