@@ -1,15 +1,18 @@
 PODS:
   - EHPlainAlert (1.2.1)
   - FLAnimatedImage (1.0.12)
+  - WebPay (2.0.3)
 
 DEPENDENCIES:
   - EHPlainAlert
   - FLAnimatedImage (~> 1.0)
+  - WebPay (~> 2.0.3)
 
 SPEC CHECKSUMS:
   EHPlainAlert: c58e5583ca5ad2a82693d49762b2646011fcb389
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  WebPay: 37266115aaaa0676136e89bd7c2ecad358e6f5da
 
-PODFILE CHECKSUM: fd853c2d6bc9f5a560998d49cbe5d1b7622ef6bb
+PODFILE CHECKSUM: f30d1b5cb20457ef52f558ef2d948a1518ec5a1b
 
 COCOAPODS: 1.0.0

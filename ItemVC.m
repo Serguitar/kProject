@@ -9,6 +9,7 @@
 #import "ItemVC.h"
 #import "CollectionCell.h"
 #import <EHPlainAlert/EHPlainAlert.h>
+#import "Webpay.h"
 
 
 
@@ -36,6 +37,10 @@
     }
     
     [_minusButton setEnabled:YES];
+    
+
+    // replace test_public_YOUR_PUBLIC_KEY with your WebPay publishable key
+    [WPYTokenizer setPublicKey:@"test_public_YOUR_PUBLIC_KEY"];
 }
 //TableViewCellDeelgate
 - (IBAction)plusButtonTapped {
@@ -139,6 +144,26 @@
     
     [self.navigationController pushViewController:dest animated:YES];
 }
+
+- (IBAction)buyNowTapped:(id)sender {
+    WPYCreditCard *card = [WPYCreditCard new];
+    card.number = @"5106216009511977";
+    card.name =   @"IVAN IVANOV";
+    card.cvc =    @"123";
+    card.expiryYear = 2018;
+    card.expiryMonth = 5;
+    
+    WPYPaymentViewController *paymentViewController = [WPYPaymentViewController paymentViewControllerWithPriceTag:@"350 $" card:card callback:^(WPYPaymentViewController *paymentViewController, WPYToken *token, NSError *error) {
+        
+        [self.navigationController popViewControllerAnimated:NO];
+        
+        [self performSegueWithIdentifier:@"itemToOrderVC" sender:nil];
+        
+    }];
+    
+    [self.navigationController pushViewController:paymentViewController animated:YES];
+}
+
 
 /*
 #pragma mark - Navigation

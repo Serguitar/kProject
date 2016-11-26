@@ -195,6 +195,9 @@
                                                         <state key="normal" title="Buy now">
                                                             <color key="titleColor" red="0.12656247615814209" green="0.26289856433868408" blue="0.55675399303436279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="buyNowTapped:" destination="Cis-GW-QjR" eventType="touchUpInside" id="Ay8-2C-4dT"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -265,11 +268,12 @@
                         <outlet property="textViewCintainer" destination="WiQ-wW-s8x" id="vRJ-7D-jdZ"/>
                         <outlet property="textViewHeightConstraint" destination="NiL-Hr-ocC" id="Eb7-UC-zYz"/>
                         <outlet property="titleLabel" destination="9Cb-Kp-gT6" id="l2r-j1-5je"/>
+                        <segue destination="Zhz-4r-xAD" kind="presentation" identifier="itemToOrderVC" id="7ok-sv-enB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FQk-0d-ioO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="840.79999999999995" y="-401.64917541229386"/>
+            <point key="canvasLocation" x="764" y="-401"/>
         </scene>
         <!--InfoVC-->
         <scene sceneID="QyV-qR-oNI">
@@ -670,7 +674,7 @@
                                             <constraint firstAttribute="height" constant="45" id="yer-OS-3yi"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                        <state key="normal" title="Check &amp; pay">
+                                        <state key="normal" title="OK">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -739,4 +743,7 @@
         <image name="nfc.png" width="643" height="565"/>
         <image name="pick.png" width="626" height="626"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="7ok-sv-enB"/>
+    </inferredMetricsTieBreakers>
 </document>

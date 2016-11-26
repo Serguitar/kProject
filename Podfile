@@ -6,6 +6,7 @@ target 'projectKey' do
   # use_frameworks!
   pod 'FLAnimatedImage', '~> 1.0'
 pod 'EHPlainAlert'
+pod 'WebPay', '~> 2.0.3'
   # Pods for projectKey
 
 end
