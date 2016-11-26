@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "TableViewCell.h"
 #import "ItemVC.h"
+#import "InfoVC.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource, ItemVCDelegate, TableViewCellDeelgate> {
     NSArray *items;
@@ -35,10 +36,16 @@
     
     _tableView.tableFooterView = [UIView new];
     
-    [self performSelector:@selector(showItemView) withObject:nil afterDelay:2.0];
+//    [self performSelector:@selector(showItemView) withObject:nil afterDelay:2.0];
     
     [self configureButton];
     
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped)];
+    [self.view addGestureRecognizer:gestureRecognizer];
+}
+
+- (void)viewTapped {
+    [self showItemView];
 }
 
 - (void)configureButton {
@@ -152,6 +159,25 @@
 }
 
 
+- (IBAction)infoButtonTapped:(id)sender {
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    InfoVC *vc = [storyboard instantiateViewControllerWithIdentifier:@"InfoVC_SID"];
+    vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    
+    [self presentViewController:vc animated:YES completion:nil];
+    
+//    [UIView transitionFromView:self.view
+//                        toView:vc.view
+//                      duration:1
+//                       options:UIViewAnimationOptionTransitionFlipFromBottom
+//                    completion:nil];
+//    
+//
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [vc.view removeFromSuperview];
+//    });
+}
 
 
 

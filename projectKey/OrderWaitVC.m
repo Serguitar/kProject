@@ -10,6 +10,7 @@
  #import "FLAnimatedImage.h"
 #import "OrderPickupVC.h"
 
+
 @interface OrderWaitVC () {
     NSTimer *timer;
 }
@@ -17,6 +18,10 @@
 @end
 
 @implementation OrderWaitVC
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,8 +34,13 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(close) name:@"CLOSE" object:nil];
+    
 //    [self showComplete];
+}
 
+- (void)close {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)showAnimation {

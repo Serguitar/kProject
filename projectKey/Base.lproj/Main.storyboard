@@ -248,6 +248,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="alsoNeedLabel" destination="YEf-el-0gk" id="LPF-q4-3LF"/>
                         <outlet property="collectionView" destination="OBj-g9-3d1" id="1bJ-LC-7Qn"/>
                         <outlet property="imageIV" destination="eQM-Gs-BC2" id="Ji1-Qm-Qph"/>
                         <outlet property="minusButton" destination="LsE-m4-rKh" id="84K-kn-GZQ"/>
@@ -262,6 +263,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FQk-0d-ioO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="840.79999999999995" y="-401.64917541229386"/>
+        </scene>
+        <!--InfoVC-->
+        <scene sceneID="QyV-qR-oNI">
+            <objects>
+                <viewController storyboardIdentifier="InfoVC_SID" id="ZMg-xQ-OlR" customClass="InfoVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8do-og-PS2"/>
+                        <viewControllerLayoutGuide type="bottom" id="BcK-HS-GH3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p31-c2-o7X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAq-st-8j4">
+                                <rect key="frame" x="317" y="32" width="42" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="7aZ-sP-FaX"/>
+                                    <constraint firstAttribute="height" constant="37" id="LEs-df-veL"/>
+                                </constraints>
+                                <state key="normal" image="add"/>
+                                <connections>
+                                    <action selector="closeButtonTapped:" destination="ZMg-xQ-OlR" eventType="touchUpInside" id="PFE-DR-FEk"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J19-Kf-IGj">
+                                <rect key="frame" x="16" y="94" width="343" height="365"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nfc.png" translatesAutoresizingMaskIntoConstraints="NO" id="6fk-wI-tkh">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="305"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="305" id="XFS-PY-3lp"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lift the phone to K-tag" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqX-Ha-Aqx">
+                                        <rect key="frame" x="8" y="313" width="327" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="J19-Kf-IGj" secondAttribute="height" multiplier="343:305" constant="-67.47540983606558" id="2UU-2m-lEa"/>
+                                    <constraint firstAttribute="bottom" secondItem="6fk-wI-tkh" secondAttribute="bottom" constant="60" id="7z8-oZ-J5u"/>
+                                    <constraint firstItem="6fk-wI-tkh" firstAttribute="top" secondItem="J19-Kf-IGj" secondAttribute="top" id="WJZ-e7-wKd"/>
+                                    <constraint firstItem="6fk-wI-tkh" firstAttribute="leading" secondItem="J19-Kf-IGj" secondAttribute="leading" id="WjX-wg-0ia"/>
+                                    <constraint firstAttribute="trailing" secondItem="6fk-wI-tkh" secondAttribute="trailing" id="hi9-Nk-ggu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="J19-Kf-IGj" firstAttribute="centerX" secondItem="p31-c2-o7X" secondAttribute="centerX" id="38R-5y-rsi"/>
+                            <constraint firstAttribute="trailing" secondItem="NAq-st-8j4" secondAttribute="trailing" constant="16" id="ILU-G6-mt7"/>
+                            <constraint firstItem="NAq-st-8j4" firstAttribute="top" secondItem="8do-og-PS2" secondAttribute="bottom" constant="12" id="QBK-Sc-vRT"/>
+                            <constraint firstItem="J19-Kf-IGj" firstAttribute="width" secondItem="J19-Kf-IGj" secondAttribute="height" multiplier="343:305" constant="-67.47540983606558" id="UOx-bV-nDW"/>
+                            <constraint firstItem="J19-Kf-IGj" firstAttribute="top" secondItem="NAq-st-8j4" secondAttribute="bottom" constant="25" id="VFk-3J-oVY"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mEI-04-0rV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="88.799999999999997" y="-1080.8095952023989"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -417,7 +482,7 @@
                                             <constraint firstAttribute="width" constant="145" id="chG-Hk-f5p"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                        <state key="normal" title="   Assemble order   ">
+                                        <state key="normal" title="   Buy   ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -460,6 +525,9 @@
                         <nil key="title"/>
                         <barButtonItem key="rightBarButtonItem" image="info-button.png" style="plain" id="vTi-YY-NOg">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="infoButtonTapped:" destination="BYZ-38-t0r" id="hKc-Td-6CH"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -495,7 +563,7 @@
                                     <constraint firstAttribute="width" constant="260" id="ccP-zL-qkJ"/>
                                 </constraints>
                             </view>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="8jr-Ls-Abh">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.01" translatesAutoresizingMaskIntoConstraints="NO" id="8jr-Ls-Abh">
                                 <rect key="frame" x="35" y="455.5" width="313" height="2"/>
                                 <color key="tintColor" red="1" green="0.41176470590000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -658,6 +726,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add" width="16" height="16"/>
         <image name="d.jpeg" width="500" height="500"/>
         <image name="info-button.png" width="25" height="25"/>
         <image name="nfc.png" width="643" height="565"/>

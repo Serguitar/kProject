@@ -11,6 +11,10 @@
 		A52FF03E1DE99BD300BF082B /* pick.png in Resources */ = {isa = PBXBuildFile; fileRef = A52FF03D1DE99BD300BF082B /* pick.png */; };
 		A52FF0411DE9A15500BF082B /* OrderPickupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A52FF0401DE9A15500BF082B /* OrderPickupVC.m */; };
 		A52FF0441DE9CD9200BF082B /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A52FF0431DE9CD9200BF082B /* CollectionCell.m */; };
+		A52FF0471DE9DB3700BF082B /* InfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A52FF0461DE9DB3700BF082B /* InfoVC.m */; };
+		A52FF04B1DE9DD8A00BF082B /* add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A52FF0481DE9DD8A00BF082B /* add@2x.png */; };
+		A52FF04C1DE9DD8A00BF082B /* add@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A52FF0491DE9DD8A00BF082B /* add@3x.png */; };
+		A52FF04D1DE9DD8A00BF082B /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = A52FF04A1DE9DD8A00BF082B /* add.png */; };
 		A53E03901DE8C91F00AE7A17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A53E038F1DE8C91F00AE7A17 /* main.m */; };
 		A53E03931DE8C91F00AE7A17 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A53E03921DE8C91F00AE7A17 /* AppDelegate.m */; };
 		A53E03961DE8C91F00AE7A17 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53E03951DE8C91F00AE7A17 /* ViewController.m */; };
@@ -38,6 +42,11 @@
 		A52FF0401DE9A15500BF082B /* OrderPickupVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderPickupVC.m; sourceTree = "<group>"; };
 		A52FF0421DE9CD9200BF082B /* CollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCell.h; sourceTree = "<group>"; };
 		A52FF0431DE9CD9200BF082B /* CollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCell.m; sourceTree = "<group>"; };
+		A52FF0451DE9DB3700BF082B /* InfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoVC.h; sourceTree = "<group>"; };
+		A52FF0461DE9DB3700BF082B /* InfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoVC.m; sourceTree = "<group>"; };
+		A52FF0481DE9DD8A00BF082B /* add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add@2x.png"; sourceTree = "<group>"; };
+		A52FF0491DE9DD8A00BF082B /* add@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add@3x.png"; sourceTree = "<group>"; };
+		A52FF04A1DE9DD8A00BF082B /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		A53E038B1DE8C91F00AE7A17 /* projectKey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectKey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A53E038F1DE8C91F00AE7A17 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A53E03911DE8C91F00AE7A17 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -97,6 +106,9 @@
 		A53E038D1DE8C91F00AE7A17 /* projectKey */ = {
 			isa = PBXGroup;
 			children = (
+				A52FF0481DE9DD8A00BF082B /* add@2x.png */,
+				A52FF0491DE9DD8A00BF082B /* add@3x.png */,
+				A52FF04A1DE9DD8A00BF082B /* add.png */,
 				A52FF03D1DE99BD300BF082B /* pick.png */,
 				A53E03B91DE97EE300AE7A17 /* nfc.png */,
 				A53E03AD1DE8DE4400AE7A17 /* d.jpeg */,
@@ -116,6 +128,8 @@
 				A52FF0401DE9A15500BF082B /* OrderPickupVC.m */,
 				A52FF0421DE9CD9200BF082B /* CollectionCell.h */,
 				A52FF0431DE9CD9200BF082B /* CollectionCell.m */,
+				A52FF0451DE9DB3700BF082B /* InfoVC.h */,
+				A52FF0461DE9DB3700BF082B /* InfoVC.m */,
 				A53E03BB1DE984CA00AE7A17 /* New Group */,
 				A53E03B51DE8E4BA00AE7A17 /* Models */,
 				A53E039A1DE8C91F00AE7A17 /* Assets.xcassets */,
@@ -241,7 +255,10 @@
 				A52FF03E1DE99BD300BF082B /* pick.png in Resources */,
 				A53E03BA1DE97EE300AE7A17 /* nfc.png in Resources */,
 				A53E03AE1DE8DE4400AE7A17 /* d.jpeg in Resources */,
+				A52FF04C1DE9DD8A00BF082B /* add@3x.png in Resources */,
 				A53E03C61DE9855900AE7A17 /* info-button.png in Resources */,
+				A52FF04B1DE9DD8A00BF082B /* add@2x.png in Resources */,
+				A52FF04D1DE9DD8A00BF082B /* add.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +325,7 @@
 				A53E03A71DE8D81700AE7A17 /* TableViewCell.m in Sources */,
 				A53E03931DE8C91F00AE7A17 /* AppDelegate.m in Sources */,
 				A53E03B41DE8E49000AE7A17 /* ItemVC.m in Sources */,
+				A52FF0471DE9DB3700BF082B /* InfoVC.m in Sources */,
 				A53E03901DE8C91F00AE7A17 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

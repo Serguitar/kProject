@@ -1,29 +1,22 @@
 //
-//  OrderPickupVC.m
+//  InfoVC.m
 //  projectKey
 //
 //  Created by Сергей Лукоянов on 26.11.16.
 //  Copyright © 2016 Сергей Лукоянов. All rights reserved.
 //
 
-#import "OrderPickupVC.h"
+#import "InfoVC.h"
 
-@interface OrderPickupVC ()
+@interface InfoVC ()
 
 @end
 
-@implementation OrderPickupVC
+@implementation InfoVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    UIColor *color = [UIColor colorWithRed:255.0/255.0 green:105.0/255.0 blue:0.0/255.0 alpha:1];
-    
-    CALayer *l = _payButon.layer;
-    l.borderColor = color.CGColor;
-    l.cornerRadius = _payButon.frame.size.height/2;
-    l.borderWidth = 1;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,10 +24,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)buttonTapped:(id)sender {
-    [self dismissViewControllerAnimated:NO completion:nil];
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"CLOSE" object:nil];
+- (IBAction)closeButtonTapped:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

@@ -8,6 +8,7 @@
 
 #import "ItemVC.h"
 #import "CollectionCell.h"
+#import <EHPlainAlert/EHPlainAlert.h>
 
 
 
@@ -31,6 +32,7 @@
     
     if (_isRelatedMode) {
         [_collectionView setHidden:YES];
+        [_alsoNeedLabel setHidden:YES];
     }
     
 }
@@ -86,6 +88,10 @@
     if (_delegate && [_delegate respondsToSelector:@selector(didSelectItem:)]) {
         [_delegate didSelectItem:_item];
         [self.navigationController popViewControllerAnimated:YES];
+        
+        if (_isRelatedMode) {
+            [EHPlainAlert showAlertWithTitle:nil message:@"Added to cart" type:ViewAlertSuccess];
+        }
     }
 }
 
