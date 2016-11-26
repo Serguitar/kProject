@@ -13,6 +13,7 @@
 #import "CardRouter.h"
 #import "NetManager.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "OrderProgressManager.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource, ItemVCDelegate, TableViewCellDeelgate> {
     NSArray *items;
@@ -166,7 +167,12 @@
         ItemVC *itemVC = [segue destinationViewController];
         itemVC.delegate = self;
         itemVC.item = foundItem;
+    } else if ([segue.identifier isEqualToString:@"vcToOrderVC"]) {
+        OrderProgressManager *orderManager = [OrderProgressManager sharedInstance];
+        [orderManager sendItems:items];
     }
+    
+//
 }
 
 

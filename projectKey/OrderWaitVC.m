@@ -35,12 +35,17 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(close) name:@"CLOSE" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orderAssembled) name:@"ORDER_PACKED" object:nil];
     
 //    [self showComplete];
 }
 
 - (void)close {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)orderAssembled {
+     _progressView.progress = 1;
 }
 
 - (void)showAnimation {
@@ -61,6 +66,10 @@
 - (void)setPrrogress {
     CGFloat progress = _progressView.progress;
     progress += 0.005;
+    
+    if (progress > 0.9 && progress < 1) {
+        progress = 0.9;
+    }
     
     if (progress >= 1) {
         [self showComplete];

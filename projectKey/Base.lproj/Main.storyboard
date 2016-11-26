@@ -667,9 +667,12 @@
                                     <constraint firstAttribute="height" constant="2" id="wti-NT-qDt"/>
                                 </constraints>
                             </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You order is assembling" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtF-SF-6Rf">
-                                <rect key="frame" x="27" y="122" width="313" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You order is assembling" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtF-SF-6Rf">
+                                <rect key="frame" x="31" y="122" width="313" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="38Q-tV-vYX"/>
+                                    <constraint firstAttribute="width" constant="313" id="M4X-HS-Hik"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <color key="textColor" red="0.32153749465942383" green="0.32158857583999634" blue="0.32152634859085083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -679,7 +682,9 @@
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3B2-QF-s4n" firstAttribute="centerX" secondItem="Cbs-CC-1gw" secondAttribute="centerX" id="AlG-QJ-xw6"/>
+                            <constraint firstItem="vtF-SF-6Rf" firstAttribute="top" secondItem="K6v-cS-iAm" secondAttribute="bottom" constant="102" id="ISt-Dm-77X"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8jr-Ls-Abh" secondAttribute="trailing" constant="11" id="Mvm-dm-yX6"/>
+                            <constraint firstItem="vtF-SF-6Rf" firstAttribute="centerX" secondItem="Cbs-CC-1gw" secondAttribute="centerX" id="Yb9-cz-RLi"/>
                             <constraint firstItem="8jr-Ls-Abh" firstAttribute="top" secondItem="3B2-QF-s4n" secondAttribute="bottom" constant="24.5" id="ZZ8-Rt-YX0"/>
                             <constraint firstItem="8jr-Ls-Abh" firstAttribute="leading" secondItem="Cbs-CC-1gw" secondAttribute="leadingMargin" constant="19" id="cyU-7f-bSH"/>
                             <constraint firstItem="3B2-QF-s4n" firstAttribute="centerY" secondItem="Cbs-CC-1gw" secondAttribute="centerY" id="z1K-Em-Snp"/>
@@ -830,6 +835,6 @@
         <image name="pick.png" width="626" height="626"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7ok-sv-enB"/>
+        <segue reference="Ewv-np-EVo"/>
     </inferredMetricsTieBreakers>
 </document>

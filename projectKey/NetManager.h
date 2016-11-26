@@ -15,5 +15,7 @@ typedef void (^CommonBlock)(id object, NSError *error);
 
 - (void)loadProductWithEAN:(NSString *)eanStr block:(CommonBlock)block;
 - (void)loadPriceWithEAN:(NSString *)eanStr block:(CommonBlock)block;
+- (void)sendOrderItems:(NSArray *)items block:(CommonBlock)block;
+- (void)checkOrder:(NSString *)orderId block:(CommonBlock)block;
 
 @end

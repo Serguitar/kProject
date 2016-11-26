@@ -8,6 +8,9 @@
 
 #import "NetManager.h"
 #import <AFNetworking/AFNetworking.h>
+#import "Item.h"
+
+static NSString *const kAPI_LINK = @"http://ktools.store/";
 
 @implementation NetManager
 
@@ -42,14 +45,56 @@
 }
 
 - (void)loadPriceWithEAN:(NSString *)eanStr block:(CommonBlock)block {
-    NSString *fullPath = @"http://ktools.store/";
-    fullPath = [fullPath stringByAppendingFormat:@"price/%@",eanStr];
-    [self.manager2 GET:fullPath parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSString *fullPath = [kAPI_LINK stringByAppendingFormat:@"price/%@",eanStr];
+    AFHTTPRequestOperationManager *manager2 = self.manager2;
+    manager2.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
+    [manager2 GET:fullPath parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"ean =%@, response =%@",eanStr, responseObject);
         block(responseObject,nil);
     }
     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         block(nil,error);
     }];
+}
+
+- (void)sendOrderItems:(NSArray *)items block:(CommonBlock)block {
+    NSString *fullPath = [kAPI_LINK stringByAppendingFormat:@"neworder/"];
+    NSString *eans = [self stringFromItems:items];
+    fullPath = [fullPath stringByAppendingString:eans];
+    [self.manager2 GET:fullPath parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"eans =%@, response =%@",eans, responseObject);
+        block(responseObject,nil);
+    }
+    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        block(nil,error);
+    }];
+}
+
+- (void)checkOrder:(NSString *)orderId block:(CommonBlock)block {
+    NSString *fullPath = [kAPI_LINK stringByAppendingFormat:@"status/%@",orderId];
+    AFHTTPRequestOperationManager *manager2 = self.manager2;
+    manager2.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
+    [manager2 GET:fullPath parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        block(responseObject,nil);
+    }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+       block(nil,error);
+   }];
+}
+
+- (NSString *)stringFromItems:(NSArray *)items {
+    NSMutableString *str = [NSMutableString new];
+    for (Item *item in items) {
+       [str appendFormat:@"%li-%li",item.ean, item.quantity];
+        if (item != items.lastObject) {
+            [str appendString:@","];
+        }
+    }
+    if (str.length > 0) {
+        return str;
+    }
+    
+    return nil;
 }
 
 @end

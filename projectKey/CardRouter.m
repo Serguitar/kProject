@@ -11,7 +11,9 @@
 
 @implementation CardRouter
 
-+ (void)showCardOnVC:(UIViewController *)vc fromItem:(BOOL)fromItem price:(NSString *)price {
++ (void)showCardOnVC:(UIViewController *)vc
+            fromItem:(BOOL)fromItem
+               price:(NSString *)price {
     // replace test_public_YOUR_PUBLIC_KEY with your WebPay publishable key
     [WPYTokenizer setPublicKey:@"test_public_YOUR_PUBLIC_KEY"];
     
