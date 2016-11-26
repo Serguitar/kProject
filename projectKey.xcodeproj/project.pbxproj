@@ -17,6 +17,10 @@
 		A53E03AE1DE8DE4400AE7A17 /* d.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A53E03AD1DE8DE4400AE7A17 /* d.jpeg */; };
 		A53E03B41DE8E49000AE7A17 /* ItemVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A53E03B31DE8E49000AE7A17 /* ItemVC.m */; };
 		A53E03B81DE8E51A00AE7A17 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = A53E03B71DE8E51A00AE7A17 /* Item.m */; };
+		A53E03BA1DE97EE300AE7A17 /* nfc.png in Resources */ = {isa = PBXBuildFile; fileRef = A53E03B91DE97EE300AE7A17 /* nfc.png */; };
+		A53E03C51DE9855900AE7A17 /* info-button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A53E03C21DE9855900AE7A17 /* info-button@3x.png */; };
+		A53E03C61DE9855900AE7A17 /* info-button.png in Resources */ = {isa = PBXBuildFile; fileRef = A53E03C31DE9855900AE7A17 /* info-button.png */; };
+		A53E03C71DE9855900AE7A17 /* info-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A53E03C41DE9855900AE7A17 /* info-button@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,10 @@
 		A53E03B31DE8E49000AE7A17 /* ItemVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemVC.m; path = ../ItemVC.m; sourceTree = "<group>"; };
 		A53E03B61DE8E51A00AE7A17 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		A53E03B71DE8E51A00AE7A17 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		A53E03B91DE97EE300AE7A17 /* nfc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nfc.png; sourceTree = "<group>"; };
+		A53E03C21DE9855900AE7A17 /* info-button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info-button@3x.png"; sourceTree = "<group>"; };
+		A53E03C31DE9855900AE7A17 /* info-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info-button.png"; sourceTree = "<group>"; };
+		A53E03C41DE9855900AE7A17 /* info-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info-button@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +77,7 @@
 		A53E038D1DE8C91F00AE7A17 /* projectKey */ = {
 			isa = PBXGroup;
 			children = (
+				A53E03B91DE97EE300AE7A17 /* nfc.png */,
 				A53E03AD1DE8DE4400AE7A17 /* d.jpeg */,
 				A53E03911DE8C91F00AE7A17 /* AppDelegate.h */,
 				A53E03921DE8C91F00AE7A17 /* AppDelegate.m */,
@@ -79,6 +88,7 @@
 				A53E03971DE8C91F00AE7A17 /* Main.storyboard */,
 				A53E03A51DE8D81700AE7A17 /* TableViewCell.h */,
 				A53E03A61DE8D81700AE7A17 /* TableViewCell.m */,
+				A53E03BB1DE984CA00AE7A17 /* New Group */,
 				A53E03B51DE8E4BA00AE7A17 /* Models */,
 				A53E039A1DE8C91F00AE7A17 /* Assets.xcassets */,
 				A53E039C1DE8C91F00AE7A17 /* LaunchScreen.storyboard */,
@@ -103,6 +113,16 @@
 				A53E03B71DE8E51A00AE7A17 /* Item.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		A53E03BB1DE984CA00AE7A17 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				A53E03C21DE9855900AE7A17 /* info-button@3x.png */,
+				A53E03C31DE9855900AE7A17 /* info-button.png */,
+				A53E03C41DE9855900AE7A17 /* info-button@2x.png */,
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,9 +185,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A53E039E1DE8C91F00AE7A17 /* LaunchScreen.storyboard in Resources */,
+				A53E03C51DE9855900AE7A17 /* info-button@3x.png in Resources */,
 				A53E039B1DE8C91F00AE7A17 /* Assets.xcassets in Resources */,
 				A53E03991DE8C91F00AE7A17 /* Main.storyboard in Resources */,
+				A53E03C71DE9855900AE7A17 /* info-button@2x.png in Resources */,
+				A53E03BA1DE97EE300AE7A17 /* nfc.png in Resources */,
 				A53E03AE1DE8DE4400AE7A17 /* d.jpeg in Resources */,
+				A53E03C61DE9855900AE7A17 /* info-button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

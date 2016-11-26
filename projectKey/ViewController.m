@@ -29,7 +29,18 @@
     
 //    objects = @[ @1, @2, @3, @4, @5];
     
+    _tableView.tableFooterView = [UIView new];
+    
     [self performSelector:@selector(showItemView) withObject:nil afterDelay:2.0];
+    
+    [self configureButton];
+}
+
+- (void)configureButton {
+    CALayer *layer = _assembleOrderButton.layer;
+    layer.cornerRadius = _assembleOrderButton.frame.size.height/2;
+    layer.borderColor = [UIColor whiteColor].CGColor;
+    layer.borderWidth = 1;
 }
 
 - (void)showItemView {
@@ -42,7 +53,7 @@
         price += item.cost * item.quantity;
     }
     
-    _priceLabel.text = [NSString stringWithFormat:@"%.1f", price];
+    _priceLabel.text = [NSString stringWithFormat:@"%.1f $", price];
 }
 
 
