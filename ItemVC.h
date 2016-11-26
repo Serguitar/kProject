@@ -30,4 +30,7 @@
 
 @property(nonatomic, weak) id <ItemVCDelegate> delegate;
 
+@property(nonatomic, assign) BOOL isRelatedMode;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
 @end

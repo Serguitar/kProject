@@ -7,11 +7,13 @@
 //
 
 #import "ItemVC.h"
+#import "CollectionCell.h"
 
 
 
-@interface ItemVC () {
+@interface ItemVC () <UICollectionViewDelegate, UICollectionViewDataSource> {
     CAGradientLayer *gradient;
+    NSArray *arr;
 }
 
 @end
@@ -24,6 +26,12 @@
     
     [self configureTextView];
     [self configureButtons];
+    
+    arr = @[ @1, @2, @3, @4];
+    
+    if (_isRelatedMode) {
+        [_collectionView setHidden:YES];
+    }
     
 }
 
@@ -81,6 +89,35 @@
     }
 }
 
+
+//UICollectionViewDataSource
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return arr.count;
+}
+
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellIdenfier = @"cell";
+    CollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdenfier forIndexPath:indexPath];
+    return cell;
+}
+
+// UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    ItemVC *dest = [storyboard instantiateViewControllerWithIdentifier:@"ItemVC_SID"];
+    dest.isRelatedMode = YES;
+    dest.delegate = _delegate;
+    
+    Item *item = [Item new];
+    item.name = @"test";
+    item.cost = 70;
+    item.quantity = 1;
+    dest.item = item;
+    
+    [self.navigationController pushViewController:dest animated:YES];
+}
 
 /*
 #pragma mark - Navigation

@@ -17,6 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (weak, nonatomic) IBOutlet UIView *nfcContainerView;
 
 @end
 
@@ -25,6 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    _bottomBarHeightConstraint.constant = 0;
     
     items = [NSArray array];
     
@@ -35,6 +38,7 @@
     [self performSelector:@selector(showItemView) withObject:nil afterDelay:2.0];
     
     [self configureButton];
+    
 }
 
 - (void)configureButton {
@@ -48,7 +52,11 @@
     [self performSegueWithIdentifier:@"toItem" sender:nil];
 }
 
-
+- (void)showBottomBar {
+    [UIView animateWithDuration:1.0 animations:^{
+        _bottomBarHeightConstraint.constant = 64;
+    }];
+}
 
 - (void)calcPrice {
     CGFloat price = 0;
@@ -87,8 +95,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *const cellIdet = @"cell";
+    Item *item = items[indexPath.row];
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdet forIndexPath:indexPath];
     cell.delegate = self;
+    cell.priceLabel.text = [NSString stringWithFormat:@"%.1f €", item.cost];
+                        ;
 //    cell.photoIV.image = [UIImage imageNamed:@"d"];
     return cell;
 }
@@ -102,6 +113,8 @@
 //    items = [items arrayByAddingObject:item];
     [self.tableView reloadData];
     [self calcPrice];
+    [self showBottomBar];
+    [_nfcContainerView setHidden:YES];
 }
 
 

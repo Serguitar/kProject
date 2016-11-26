@@ -10,6 +10,7 @@
 		3D0D886D534C832522495E66 /* libPods-projectKey.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5527FED656F693B599FB1AEE /* libPods-projectKey.a */; };
 		A52FF03E1DE99BD300BF082B /* pick.png in Resources */ = {isa = PBXBuildFile; fileRef = A52FF03D1DE99BD300BF082B /* pick.png */; };
 		A52FF0411DE9A15500BF082B /* OrderPickupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A52FF0401DE9A15500BF082B /* OrderPickupVC.m */; };
+		A52FF0441DE9CD9200BF082B /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A52FF0431DE9CD9200BF082B /* CollectionCell.m */; };
 		A53E03901DE8C91F00AE7A17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A53E038F1DE8C91F00AE7A17 /* main.m */; };
 		A53E03931DE8C91F00AE7A17 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A53E03921DE8C91F00AE7A17 /* AppDelegate.m */; };
 		A53E03961DE8C91F00AE7A17 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53E03951DE8C91F00AE7A17 /* ViewController.m */; };
@@ -35,6 +36,8 @@
 		A52FF03D1DE99BD300BF082B /* pick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pick.png; sourceTree = "<group>"; };
 		A52FF03F1DE9A15500BF082B /* OrderPickupVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderPickupVC.h; sourceTree = "<group>"; };
 		A52FF0401DE9A15500BF082B /* OrderPickupVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderPickupVC.m; sourceTree = "<group>"; };
+		A52FF0421DE9CD9200BF082B /* CollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCell.h; sourceTree = "<group>"; };
+		A52FF0431DE9CD9200BF082B /* CollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCell.m; sourceTree = "<group>"; };
 		A53E038B1DE8C91F00AE7A17 /* projectKey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectKey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A53E038F1DE8C91F00AE7A17 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A53E03911DE8C91F00AE7A17 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -111,6 +114,8 @@
 				A53E03CC1DE98BB200AE7A17 /* OrderWaitVC.m */,
 				A52FF03F1DE9A15500BF082B /* OrderPickupVC.h */,
 				A52FF0401DE9A15500BF082B /* OrderPickupVC.m */,
+				A52FF0421DE9CD9200BF082B /* CollectionCell.h */,
+				A52FF0431DE9CD9200BF082B /* CollectionCell.m */,
 				A53E03BB1DE984CA00AE7A17 /* New Group */,
 				A53E03B51DE8E4BA00AE7A17 /* Models */,
 				A53E039A1DE8C91F00AE7A17 /* Assets.xcassets */,
@@ -298,6 +303,7 @@
 				A53E03CD1DE98BB200AE7A17 /* OrderWaitVC.m in Sources */,
 				A53E03B81DE8E51A00AE7A17 /* Item.m in Sources */,
 				A53E03961DE8C91F00AE7A17 /* ViewController.m in Sources */,
+				A52FF0441DE9CD9200BF082B /* CollectionCell.m in Sources */,
 				A52FF0411DE9A15500BF082B /* OrderPickupVC.m in Sources */,
 				A53E03A71DE8D81700AE7A17 /* TableViewCell.m in Sources */,
 				A53E03931DE8C91F00AE7A17 /* AppDelegate.m in Sources */,
