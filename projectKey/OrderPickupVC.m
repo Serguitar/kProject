@@ -14,6 +14,11 @@
 
 @implementation OrderPickupVC
 
+- (void)dealloc {
+    NSLog(@"dealloc dealloc");
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -24,11 +29,20 @@
     l.borderColor = color.CGColor;
     l.cornerRadius = _payButon.frame.size.height/2;
     l.borderWidth = 1;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(restoreOrderShipped) name:@"RESTORED_ORDER_SHIPPED" object:nil];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)restoreOrderShipped {
+    NSLog(@"restoreOrderShipped");
+    
+    [self buttonTapped:nil];
 }
 
 - (IBAction)buttonTapped:(id)sender {

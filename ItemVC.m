@@ -11,6 +11,7 @@
 #import <EHPlainAlert/EHPlainAlert.h>
 #import "CardRouter.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "OrderProgressManager.h"
 
 
 
@@ -195,6 +196,8 @@
     price = _item.cost * _item.quantity;
     NSString *str = [NSString stringWithFormat:@"%.1f €", price];
     [CardRouter showCardOnVC:self fromItem:YES price:str];
+    OrderProgressManager *orderManager = [OrderProgressManager sharedInstance];
+    [orderManager sendItems:@[_item]];
 }
 
 /*

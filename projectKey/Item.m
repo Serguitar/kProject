@@ -17,7 +17,9 @@
     item.name = dict[@"name"];
     item.shortDescr = dict[@"description"];
     if (dict[@"ean"]) {
-         item.ean = dict[@"ean"];
+        NSString *str = dict[@"ean"];
+        item.ean = str.integerValue;
+        NSLog(@"ean = %lu", (unsigned long)item.ean);
     }
     
     NSArray *images = dict[@"images"];

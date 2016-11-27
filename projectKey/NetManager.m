@@ -61,7 +61,9 @@ static NSString *const kAPI_LINK = @"http://ktools.store/";
     NSString *fullPath = [kAPI_LINK stringByAppendingFormat:@"neworder/"];
     NSString *eans = [self stringFromItems:items];
     fullPath = [fullPath stringByAppendingString:eans];
-    [self.manager2 GET:fullPath parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    AFHTTPRequestOperationManager *manager2 = self.manager2;
+    manager2.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
+    [manager2 GET:fullPath parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"eans =%@, response =%@",eans, responseObject);
         block(responseObject,nil);
     }
