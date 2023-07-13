@@ -13,8 +13,6 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "OrderProgressManager.h"
 
-
-
 @interface ItemVC () <UICollectionViewDelegate, UICollectionViewDataSource> {
     CAGradientLayer *gradient;
     NSArray *arr;
